@@ -1,0 +1,15 @@
+@mixin font-face($url, $font-family, $font-weight, $font-style) {
+	@font-face {
+		src:
+			url($url + ".woff2") format("woff2"),
+			url($url + ".woff") format("woff");
+		font-family: $font-family;
+		font-weight: $font-weight;
+		font-style: $font-style;
+		font-display: swap;
+	}
+}
+
+@function vw($maxSize, $minSize, $minViewPort: 300, $maxViewPort: 1920) {
+		@return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minViewPort}px) / (#{$maxViewPort} - #{$minViewPort})));
+}
