@@ -1,12 +1,23 @@
-@mixin font-face($url, $font-family, $font-weight, $font-style) {
+@mixin font($family, $color, $size, $line-height: 1em, $weight: normal, $style: normal) {
+  font-family: $family, sans-serif;
+  color: $color;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin font-face($font-family, $font-weight, $font-style, $url, $localName1, $localName2) {
 	@font-face {
-		src:
-			url($url + ".woff2") format("woff2"),
-			url($url + ".woff") format("woff");
 		font-family: $font-family;
-		font-weight: $font-weight;
-		font-style: $font-style;
-		font-display: swap;
+		src: url($url + '.eot');
+		src: local($localName1), local($localName2),
+				url($url + '.eot?#iefix') format('embedded-opentype'),
+				url($url + '.woff2') format('woff2'),
+				url($url + '.woff') format('woff'),
+				url($url + '.ttf') format('truetype');
+		font-weight: #{$font-weight};
+		font-style: #{$font-style};
 	}
 }
 

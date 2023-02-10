@@ -1,13 +1,13 @@
-/*@font-face {
-	src: url("../fonts/Montserrat-Light.eot");
-	src:
-		local("Montserrat Light"),
-		local("Montserrat-Light"),
-		url("../fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Montserrat-Light.woff2") format("woff2"),
-		url("../fonts/Montserrat-Light.woff") format("woff"),
-		url("../fonts/Montserrat-Light.ttf") format("truetype");
-	font-family: "Montserrat";
-	font-weight: 300;
-	font-style: normal;
-}*/
+// Raleway: Regular, SemiBold, Bold
+
+@include font-face('Raleway', 400, 'normal', '../fonts/Raleway/Raleway-Regular', 'Raleway', 'Raleway-Regular');
+@include font-face('Raleway', 600, 'normal', '../fonts/Raleway/Raleway-SemiBold', 'Raleway Semibold', 'Raleway-Semibold');
+@include font-face('Raleway', 'bold', 'normal', '../fonts/Raleway/Raleway-Bold', 'Raleway Bold', 'Raleway-Bold');
+
+// Gilroy: UltraLight, Regular, Medium, SemiBold, Bold
+
+@include font-face('Gilroy', 200, 'normal', '../fonts/Gilroy/Gilroy-UltraLight', 'Gilroy UltraLight', 'Gilroy-UltraLight');
+@include font-face('Gilroy', 'normal', 'normal', '../fonts/Gilroy/Gilroy-Regular', 'Gilroy Regular', 'Gilroy-Regular');
+@include font-face('Gilroy', 500, 'normal','../fonts/Gilroy/Gilroy-Medium', 'Gilroy Medium', 'Gilroy-Medium');
+@include font-face('Gilroy', 600, 'normal','../fonts/Gilroy/Gilroy-Semibold', 'Gilroy Semibold', 'Gilroy-Semibold');
+@include font-face('Gilroy', 'bold', 'normal','../fonts/Gilroy/Gilroy-Bold', 'Gilroy Bold', 'Gilroy-Bold');
