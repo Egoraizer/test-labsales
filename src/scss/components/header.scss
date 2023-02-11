@@ -1,0 +1,46 @@
+.header {
+  &__container {
+    padding: 12px 0;
+  }
+
+  &-desktop {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__links {
+      ul {
+        display: flex;
+        align-items: center;
+      }
+
+      li {
+        @include font('Raleway', 18px, 22px, 600);
+        margin-right: 40px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__phone {
+      @include font('Gilroy', 20px, 24px, 600);
+      margin-bottom: 7px;
+    }
+
+    &__request-call {
+      @include font('Gilroy', 18px, 22px, 600);
+      text-decoration: underline;
+    }
+  }
+}

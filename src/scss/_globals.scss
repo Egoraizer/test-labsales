@@ -1,4 +1,42 @@
+html, body {
+	font-family: $primary-font;
+	color: $darkBlue;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.2s;
+	cursor: pointer;
+
+	&:hover {
+		color: $brightCyan;
+	}
+}
+
 .container {
 	margin: 0 auto;
-	max-width: $max-width-container;
+	max-width: #{$secondary-container}px;
+}
+
+.--active {
+	color: $brightCyan;
+}
+
+.--mobile {
+	display: none;
+}
+
+.--desktop {
+	display: block;
+}
+
+@include mediaMaxW(768) {
+	.--mobile {
+		display: block;
+	}
+
+	.--desktop {
+		display: none;
+	}
 }

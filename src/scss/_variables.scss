@@ -1,10 +1,14 @@
 // MAIN SETTINGS
 
-$max-width-container: 1440px;
-$min-width-container: 320px;
+$max-width-container: 1440;
+$min-width-container: 320;
 
-$extra-large: 1140px;
+$secondary-container: 1140; 
 
+$breakpoints: (
+  1140: 1140px,
+  768: 768px, 
+);
 // COLORS
 
 $white: #ffffff;
@@ -18,4 +22,3 @@ $darkBlue: #212d55;
 
 $primary-font: 'Gilroy', sans-serif;
 $secondary-font: 'Raleway', sans-serif;
-
