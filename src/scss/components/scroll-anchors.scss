@@ -1,0 +1,17 @@
+.scroll-anchors {
+  padding: 30px 0;
+
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    @include font($secondary-font, 18px, 22px, 600);
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

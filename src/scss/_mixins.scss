@@ -30,12 +30,6 @@
   } @else { @warn 'Invalid breakpoint: #{$breakpoint}.'; }
 }
 
-@mixin onHover() {
-	&:hover {
-		@content;
-	}
-}
-
 @function font-calc($maxSize, $minSize, $minViewPort: $min-width-container, $maxViewPort: $max-width-container) {
 		@return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minViewPort}px) / (#{$maxViewPort} - #{$minViewPort})));
 }

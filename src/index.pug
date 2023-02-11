@@ -4,10 +4,20 @@ prepend vars
 	//-
 
 append vars
-	//-
+	- 
+		var anchors = [
+			{'href': '#', 'text': 'Преимущества', active: true}, 
+			{'href': '#', 'text': 'Инфраструктура'}, 
+			{'href': '#', 'text': 'Планировка'}, 
+			{'href': '#', 'text': 'Отделка'}, 
+			{'href': '#', 'text': 'Описание'}, 
+			{'href': '#', 'text': 'Контакты'}, 
+			{'href': '#', 'text': 'Документация'}
+		]
 
 block content
 	include pug/components/header
+	+anchors('index-anchors', anchors)
 	main.index-page
 		include pug/pages/index
 
