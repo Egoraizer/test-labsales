@@ -2,9 +2,10 @@ mixin svg(name)
 	svg&attributes(attributes)
 		use(xlink:href=`./images/sprites.svg#${name}`)
 
-mixin anchors(className, links)
-	nav.scroll-anchors(class=className)
-		ul.container.scroll-anchors__links
+mixin anchors(links)
+	nav.scroll-anchors
+		ul.scroll-anchors__links
 			each link in links
 				li.scroll-anchors__link
 					a(href=link.href class=link.active && '--active')= link.text
+

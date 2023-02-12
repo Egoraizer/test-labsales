@@ -1,3 +1,14 @@
+- 
+  var anchors = [
+    {'href': '#', 'text': 'Преимущества', active: true}, 
+    {'href': '#', 'text': 'Инфраструктура'}, 
+    {'href': '#', 'text': 'Планировка'}, 
+    {'href': '#', 'text': 'Отделка'}, 
+    {'href': '#', 'text': 'Описание'}, 
+    {'href': '#', 'text': 'Контакты'}, 
+    {'href': '#', 'text': 'Документация'}
+  ]
+
 header.header
   .container.header__container
     .header-desktop.--desktop
@@ -19,3 +30,4 @@ header.header
           a.header-desktop__phone(href='tel:+79183774810') +7 (918) 377-48-10
           a.header-desktop__request-call(href='#' id='requestCall') Заказать звонок
     .header-mobile.--mobile
+    +anchors(anchors)

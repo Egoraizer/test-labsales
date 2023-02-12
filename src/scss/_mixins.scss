@@ -30,6 +30,6 @@
   } @else { @warn 'Invalid breakpoint: #{$breakpoint}.'; }
 }
 
-@function font-calc($maxSize, $minSize, $minViewPort: $min-width-container, $maxViewPort: $max-width-container) {
+@function vw($maxSize, $minSize, $minViewPort: $min-width-container, $maxViewPort: $max-width-container) {
 		@return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minViewPort}px) / (#{$maxViewPort} - #{$minViewPort})));
 }

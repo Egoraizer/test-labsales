@@ -17,8 +17,12 @@ append vars
 
 block content
 	include pug/components/header
-	+anchors('index-anchors', anchors)
 	main.index-page
+		.index-background
+			.index-background__image
+				img(src='./images/other/index-main-image.jpg')
+			.index-background__filters
+				img.index-background__filter.index-background__filter_clouds(src='./images/other/clouds.png')
 		include pug/pages/index
-
+	footer.footer
 
