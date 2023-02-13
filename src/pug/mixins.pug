@@ -9,3 +9,10 @@ mixin anchors(links)
 				li.scroll-anchors__link
 					a(href=link.href class=link.active && '--active')= link.text
 
+mixin cardType1(card)
+	.card__wrapper
+		.card__wrapper-content
+			.card__inner(class=card.active && 'active')
+				.card__inner-content
+					p.card__text= card.title
+					p.card__text.--text-important= card.price

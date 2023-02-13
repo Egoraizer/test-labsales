@@ -65,10 +65,12 @@
     &__subtitle {
       font-size: vw(32, 20);
       line-height: vw(37, 23);
+      margin-bottom: vw(0, 25);
     }
   
     &__price {
       font-size: vw(35, 24);
+      line-height: vw(70, 50);
       margin-bottom: 35px;
     }
 
@@ -79,6 +81,7 @@
     &__cards {
       display: flex;
       align-items: center;
+      overflow-x: auto;
     }
 
     &__card {
