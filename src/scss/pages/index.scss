@@ -113,4 +113,20 @@
       height: 150px;
     }
   }
+
+  &-infrastructure {
+
+    &__map {
+      height: 662px;
+      width: 100%;
+      position: relative;
+    }
+
+    &__map-description {
+      position: absolute;
+      top: 46px;
+      bottom: 46px;
+      right: 5%;
+    }
+  }
 }

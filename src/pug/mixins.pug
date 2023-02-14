@@ -15,8 +15,8 @@ mixin cardType1(card)
 			.card__inner(class=card.active && 'active')
 				.card__inner-content
 					.card__text
-						h4.card__title=card.title
-						h5.card__subtitle=card.subtitle
+						span.card__title=card.title
+						span.card__subtitle=card.subtitle
 
 mixin cardType2(card)
 	.card__wrapper
@@ -25,5 +25,13 @@ mixin cardType2(card)
 				.card__inner-content
 					img(src=card.path)
 			.card__text
-				h4.card__title=card.title
-				h5.card__subtitle=card.subtitle
+				span.card__title=card.title
+				span.card__subtitle=card.subtitle
+
+mixin cardType3(card)
+	.card__wrapper
+		.card__wrapper-content
+			.card__inner
+				.card__inner-content
+					img(src=card.path)
+					span.card__title=card.title

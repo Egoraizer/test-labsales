@@ -19,6 +19,17 @@ a {
 	max-width: #{$secondary-container}px;
 }
 
+.h1, h1 {
+
+}
+
+.h2, h2 {
+	@include font('Gilroy', 45px, 70px, 700, $darkBlue, normal);
+	font-size: vw(45, 28);
+	line-height: vw(70, 34);
+	text-align: center;
+}
+
 .--active {
 	color: $brightCyan;
 }

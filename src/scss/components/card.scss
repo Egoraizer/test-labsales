@@ -22,6 +22,10 @@
         }
 			}
 
+			&__title {
+				margin-bottom: 8px;
+			}
+
 			&__subtitle {
 				font-weight: 700;
 			}
@@ -53,13 +57,45 @@
 			}
 
 			&__text {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
 				margin-left: 18px;
+			}
+
+			&__title {
+				margin-bottom: 8px;
 			}
 			
 			&__subtitle {
+				font-weight: 600;
+			}
+		}
+	}
+
+	&.card_type-3 {
+
+		.card {
+			&__wrapper {
+				padding: 15px;
+			}
+
+			&__inner {
+				padding: 13px 20px;
+
+				&-content {
+					display: flex;
+					align-items: center;
+
+					img {
+						width: 46px;
+						height: 46px;
+						border-radius: 100%;
+						overflow: hidden;
+					}
+				}
+			}
+
+			&__title {
+				margin-left: 10px;
+				font-size: 22px;
 				font-weight: 600;
 			}
 		}
@@ -96,14 +132,13 @@
 
 	&__text {
 		@include font('Gilroy', 22px, 26px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		text-align: left;
 
 		&:last-child {
 			margin-bottom: 0px;
 		}
-	}
-
-	&__title {
-		margin-bottom: 8px;
 	}
 }

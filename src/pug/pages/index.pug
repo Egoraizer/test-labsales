@@ -16,13 +16,17 @@
     {'title': 'Класс дома', 'subtitle': 'Эконом', path: './images/advantages/star.svg'}, 
     {'title': 'Отделка', 'subtitle': 'Чистовая', path: './images/advantages/putty-knife.svg'}, 
   ]
+  
+  var cardsType3 = [
+    {'title': 'Магазины', path: './images/map/circle-shop-white.svg'}, 
+  ]
 .index
   .index__wrapper
     .container.index-info.index__info
         h1.index-info__title Жилой комплекс 
           span.--text-important «Яблоновский»
-        h2.index-info__subtitle Краснодар, пгт. Яблоновский ул. Кобцевой
-        h3.index-info__price.--text-important от 63 801 до 65 678 ₽/м²
+        h4.index-info__subtitle Краснодар, пгт. Яблоновский ул. Кобцевой
+        h5.index-info__price.--text-important от 63 801 до 65 678 ₽/м²
         a.btn.index-info__button-get-price#buttonGetPrice(href="#") Узнать стоимость проекта
         ul.index-info__cards
           each card in cardsType1
@@ -34,3 +38,13 @@
                 li.swiper-slide.card.card_type-2.index-description__card
                   +cardType2(card)
         .swiper-pagination
+    .index-infrastructure.index__infrastructure
+      h2.index-infrastructure__title Наша Инфраструктура
+      .index-infrastructure__map
+        #infrastructure-map(style="width: 100%; height: 100%;")
+        .index-infrastructure__map-description
+          ul.index-infrastructure__cards
+            each card in cardsType3
+              li.card.card_type-3.index-infrastructure__card
+                +cardType3(card)
+        
