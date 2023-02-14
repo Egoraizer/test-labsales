@@ -1,22 +1,36 @@
 - 
-  var cards = [
-    {'title': 'Квартиры', 'price': 'от 63 801 ₽/м²', active: true}, 
-    {'title': 'Стоимость', 'price': 'от 4,44 млн ₽', active: false},
-    {'title': 'Класс', 'price': 'Эконом', active: false},
-    {'title': 'Класс', 'price': 'Эконом', active: false},
+  var cardsType1 = [
+    {'title': 'Квартиры', 'subtitle': 'от 63 801 ₽/м²', active: true}, 
+    {'title': 'Стоимость', 'subtitle': 'от 4,44 млн ₽', active: false},
+    {'title': 'Класс', 'subtitle': 'Эконом', active: false},
+    {'title': 'Срок сдачи', 'subtitle': 'Сдан', active: false},
   ]
 
+  var cardsType2 = [
+    {'title': 'Срок сдачи', 'subtitle': '2015', path: './images/advantages/keys.svg'}, 
+    {'title': 'Корпусов', 'subtitle': '2 корпуса', path: './images/advantages/building.svg'}, 
+    {'title': 'Этажность', 'subtitle': '10', path: './images/advantages/office-building.svg'},
+    {'title': 'Парковка', 'subtitle': 'Гостевая', path: './images/advantages/parking.svg'}, 
+    {'title': 'Тип дома', 'subtitle': 'Кирпичный', path: './images/advantages/brickwall.svg'}, 
+    {'title': 'Территория', 'subtitle': 'Дет.площадки', path: './images/advantages/children-slide.svg'}, 
+    {'title': 'Класс дома', 'subtitle': 'Эконом', path: './images/advantages/star.svg'}, 
+    {'title': 'Отделка', 'subtitle': 'Чистовая', path: './images/advantages/putty-knife.svg'}, 
+  ]
 .index
-  .container.index__wrapper
-    .index-info.index__info
-      h1.index-info__title Жилой комплекс 
-        span.--text-important «Яблоновский»
-      h2.index-info__subtitle Краснодар, пгт. Яблоновский ул. Кобцевой
-      h4.index-info__price.--text-important от 63 801 до 65 678 ₽/м²
-      a.btn.index-info__button-get-price#buttonGetPrice(href="#") Узнать стоимость проекта
-      ul.index-info__cards
-        each card in cards
-          li.card.card_type-1.index-info__card
-            +cardType1(card)
-
-    
+  .index__wrapper
+    .container.index-info.index__info
+        h1.index-info__title Жилой комплекс 
+          span.--text-important «Яблоновский»
+        h2.index-info__subtitle Краснодар, пгт. Яблоновский ул. Кобцевой
+        h3.index-info__price.--text-important от 63 801 до 65 678 ₽/м²
+        a.btn.index-info__button-get-price#buttonGetPrice(href="#") Узнать стоимость проекта
+        ul.index-info__cards
+          each card in cardsType1
+            li.card.card_type-1.index-info__card
+              +cardType1(card)
+    .container.swiper.index-description.index__description
+        ul.swiper-wrapper.index-description__cards
+            each card in cardsType2
+                li.swiper-slide.card.card_type-2.index-description__card
+                  +cardType2(card)
+        .swiper-pagination

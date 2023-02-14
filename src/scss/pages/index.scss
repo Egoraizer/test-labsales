@@ -48,12 +48,11 @@
   }
 
   &__wrapper {
-    margin: 65px auto 80px;
+    margin: 65px auto 100px;
   }
 
   &-info {
     text-align: center;
-    margin-bottom: 41px;
 
     &__title {
       font-family: $secondary-font;
@@ -74,14 +73,20 @@
       margin-bottom: 35px;
     }
 
-    &__button-get-price {
-      margin-bottom: 41px;
-    }
+    // &__button-get-price {
+    //   margin-bottom: 41px;
+    // }
 
     &__cards {
       display: flex;
-      align-items: center;
-      overflow-x: auto;
+      overflow: auto;
+      justify-content: center;
+      padding: 40px 0px;
+
+      @include mediaMaxW(1140) {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
     }
 
     &__card {
@@ -90,6 +95,22 @@
       &:last-child {
         margin-right: 0px;
       }
+    }
+  }
+
+  &-description {
+
+    &.container {
+      max-width: 1200px;
+      padding: 15px 30px;
+    }
+
+    .swiper-wrapper {
+      height: 350px;
+    }
+
+    .swiper-slide {
+      height: 150px;
     }
   }
 }

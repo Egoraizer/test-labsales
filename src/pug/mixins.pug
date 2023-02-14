@@ -14,5 +14,16 @@ mixin cardType1(card)
 		.card__wrapper-content
 			.card__inner(class=card.active && 'active')
 				.card__inner-content
-					p.card__text= card.title
-					p.card__text.--text-important= card.price
+					.card__text
+						h4.card__title=card.title
+						h5.card__subtitle=card.subtitle
+
+mixin cardType2(card)
+	.card__wrapper
+		.card__wrapper-content
+			.card__inner
+				.card__inner-content
+					img(src=card.path)
+			.card__text
+				h4.card__title=card.title
+				h5.card__subtitle=card.subtitle
