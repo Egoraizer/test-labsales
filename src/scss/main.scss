@@ -10,6 +10,11 @@
 @import 'components/scroll-anchors';
 @import 'components/card';
 
-// Pages
+// Partials
+@import 'partials/advantages';
+@import 'partials/infrastructure';
+@import 'partials/residential';
+@import 'partials/leave-request';
 
+// Pages
 @import "pages/index";

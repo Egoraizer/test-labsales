@@ -1,0 +1,60 @@
+.advantages {
+  &__wrapper {
+    max-width: 1200px;
+    padding: 15px 0 100px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__bullet {
+    position: relative;
+    display: inline-block;
+
+    .circle {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 10px;
+      background-color: white;
+      border-radius: 100%;
+      overflow: hidden;
+      border: 1px solid $brightCyan;
+
+    }
+
+    &_active {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: $white;
+        border: 1px solid $brightCyan;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .circle {
+        background-color: $brightCyan;
+        box-shadow: 0px 3px 15px $brightCyan;
+      }
+    }
+  }
+
+  .swiper {
+    padding: 0 15px;
+
+    &-wrapper {
+      height: 370px;
+    }
+
+    &-slide {
+      height: 150px;
+    }
+  }
+}
