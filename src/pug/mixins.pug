@@ -43,3 +43,8 @@ mixin cardType4(card)
 			.card__inner(class=card.active && 'active')
 				.card__inner-content
 					span.card__title=card.title
+
+mixin cardType5(card)
+	.card__inner
+		.card__inner-content
+			block

@@ -169,4 +169,18 @@
       }
     }
   }
+
+  &-leave-request {
+    &__blocks {
+      display: flex;
+      align-items: stretch;
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

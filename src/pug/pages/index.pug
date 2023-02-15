@@ -79,11 +79,19 @@
     .index-leave-request.index__leave-request
       .container.index-leave-request__wrapper
         h2.index-leave-request__title Узнайте о выгодных предложениях и получите личную консультацию
-        .index-leave-request__block
-          .index-leave-request__info
+        .index-leave-request__blocks
+          .index-leave-request__block
             span.--mobile.index-leave-request__status Сейчас мы работаем
             span.index-leave-request__phone-title По любым возникающим Вами вопросов звоните нам напрямую
             a.index-leave-request__phone(href='tel:+79183774810')
               img(src="./images/leave-request/telephone.svg")
               span +7 (918) 377-48-10
-          form.index-leave-request__form
+          .index-leave-request__block
+            span Или заполните форму форму
+          .index-leave-request__block
+            span.--desktop.index-leave-request__status Сейчас мы работаем
+            form.index-leave-request__form
+              .index-leave-request__form-wrapper
+                +cardType5()
+                  input(type="text" placeholder="Ваше имя")
+
