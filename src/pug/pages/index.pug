@@ -81,17 +81,29 @@
         h2.index-leave-request__title Узнайте о выгодных предложениях и получите личную консультацию
         .index-leave-request__blocks
           .index-leave-request__block
-            span.--mobile.index-leave-request__status Сейчас мы работаем
-            span.index-leave-request__phone-title По любым возникающим Вами вопросов звоните нам напрямую
+            span.--mobile.active.index-leave-request__status Сейчас мы работаем
+            span.index-leave-request__subtitle По любым возникающим Вами вопросов звоните нам напрямую
             a.index-leave-request__phone(href='tel:+79183774810')
-              img(src="./images/leave-request/telephone.svg")
-              span +7 (918) 377-48-10
+              .index-leave-request__phone-icon
+                img(src="./images/other/telephone.svg")
+              span.index-leave-request__text_phone-number +7 (918) 377-48-10
           .index-leave-request__block
-            span Или заполните форму форму
+            span.index-leave-request__text_fill-number Или заполните форму форму
           .index-leave-request__block
-            span.--desktop.index-leave-request__status Сейчас мы работаем
+            span.--desktop.active.index-leave-request__status Сейчас мы работаем
             form.index-leave-request__form
               .index-leave-request__form-wrapper
                 +cardType5()
                   input(type="text" placeholder="Ваше имя")
-
+                +cardType5()
+                  input(type="text" placeholder="Ваше имя")
+                +cardType5()
+                  input(type="text" placeholder="Ваше имя")
+                button.btn.index-info__button-get-price#formSubmit(type="submit") Отправить заявку
+            .index-leave-request__agree-privacy-policy
+              input(type="checkbox" id="input-agree-policy")
+              span(class="checkmark")
+              label(for="input-agree-policy" class="checker")
+                span Я принимаю условия 
+                a(href="#") обработки персональных данных 
+                
