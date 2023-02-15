@@ -23,6 +23,8 @@
     {'title': 'Детский сад', href: './images/map/icon-kiddengarden.svg', active: false}, 
     {'title': 'АЗС', href: './images/map/icon-gas-station.svg', active: false}, 
     {'title': 'Поликлинника', href: './images/map/icon-pharmacy.svg', active: false}, 
+    {'title': 'Банк', href: './images/map/icon-bank.svg', active: false}, 
+    {'title': 'Кафе', href: './images/map/icon-cafe.svg', active: false}, 
   ]
 
   var cardsType4 = [
@@ -45,37 +47,70 @@
           each card in cardsType1
             li.card.card_type-1.index-info__card
               +cardType1(card)
-    .index-description.index__description
-      .container.swiper.index-description__wrapper#swiper-index-grid-cards
-        ul.swiper-wrapper.index-description__cards
-            each card in cardsType2
-                li.swiper-slide.card.card_type-2.index-description__card
-                  +cardType2(card)
-        .swiper-pagination
+    .index-advantages.index__advantages
+      .container.index-advantages__wrapper
+        h2.index-advantages__title О комплексе
+        .swiper#index-grid-cards
+          ul.swiper-wrapper.index-advantages__cards
+              each card in cardsType2
+                  li.swiper-slide.card.card_type-2.index-advantages__card
+                    +cardType2(card)
+          .swiper-pagination
     .index-infrastructure.index__infrastructure
-      h2.container.index-infrastructure__title Наша инфраструктура
-      .index-infrastructure__map
-        #infrastructure-map(style="width: 100%; height: 100%;")
-        .swiper.index-infrastructure__map-description
-          ul.swiper-wrapper.index-infrastructure__cards
-            each card in cardsType3
-              li.swiper-slide.card.card_type-3.index-infrastructure__card
-                +cardType3(card)
-              li.swiper-slide.card.card_type-3.index-infrastructure__card
-                +cardType3(card)
-          .swiper-scrollbar
-    .index-residential-description.index__residential-description
-      h2.index-residential-description__title Описание Жилого Комплекса
-      .index-residential-description__subtitle
-        span Нажимайте
-        svg(width='30' height='12' viewbox='0 0 23 12' fill='none' xmlns='http://www.w3.org/2000/svg')
-          path(d='M0.657228 5.59267L5.74505 0.518923C5.91175 0.352785 6.18163 0.353064 6.34805 0.519782C6.51434 0.686479 6.51391 0.956515 6.34719 1.12278L1.56221 5.89455L6.34736 10.6663C6.51406 10.8326 6.51449 11.1024 6.34822 11.2692C6.2648 11.3527 6.15551 11.3945 6.04622 11.3945C5.93721 11.3945 5.82835 11.353 5.74507 11.27L0.657228 6.1964C0.576941 6.11653 0.531888 6.00782 0.531888 5.89455C0.531888 5.78128 0.57707 5.6727 0.657228 5.59267Z' fill='#656D89')
-          path(d='M22.3428 6.19639L17.2549 11.2701C17.0883 11.4363 16.8184 11.436 16.6519 11.2693C16.4857 11.1026 16.4861 10.8325 16.6528 10.6663L21.4378 5.89451L16.6526 1.12277C16.4859 0.956478 16.4855 0.686614 16.6518 0.519896C16.7352 0.436322 16.8445 0.394534 16.9538 0.394534C17.0628 0.394534 17.1717 0.436042 17.2549 0.519036L22.3428 5.59266C22.4231 5.67254 22.4681 5.78125 22.4681 5.89451C22.4681 6.00778 22.4229 6.11636 22.3428 6.19639Z' fill='#656D89')
-        span чтобы подробно ознакомится с проектом
-      ul.container.index-residential-description__cards
-        each card in cardsType4
-          li.card.card_type-4.index-residential-description__card
-              +cardType4(card)
+      .index-infrastructure__wrapper
+        h2.container.index-infrastructure__title Наша инфраструктура
+        .index-infrastructure__map
+          #infrastructure-map(style="width: 100%; height: 100%;")
+          .swiper.index-infrastructure__map-description
+            ul.swiper-wrapper.index-infrastructure__cards
+              each card in cardsType3
+                li.swiper-slide.card.card_type-3.index-infrastructure__card
+                  +cardType3(card)
+            .swiper-scrollbar
+    .index-residential.index__residential-description
+      .index-residential__wrapper
+        h2.index-residential__title Описание Жилого Комплекса
+        .index-residential__subtitle
+          span Нажимайте
+          img(src="./images/other/arrows.svg")
+          span чтобы подробно ознакомится с проектом
+        .container.swiper#index-residential-thumbs
+          ul.swiper-wrapper.index-residential__thumbs
+            each card in cardsType4
+              li.swiper-slide.card.card_type-4.index-residential__thumb
+                  +cardType4(card)
+        .container.swiper#index-residential-cards
+          ul.swiper-wrapper.index-residential__cards
+            li.swiper-slide.index-residential__card
+              p Парковка
+            li.swiper-slide.index-residential__card
+              p Архитектура
+            li.swiper-slide.index-residential__card
+              p Охрана
+            li.swiper-slide.index-residential__card
+              .index-residential__image
+                img(src="./images/residental/image-description-desc-big-1.png")
+              .index-residential__image
+                img(src="./images/residental/image-description-desc-small-1.png")
+              .index-residential__image
+                img(src="./images/residental/image-description-desc-small-2.png")
+              .index-residential__image
+                img(src="./images/residental/image-description-desc-small-3.png")
+              .index-residential__description
+                .index-residential__description-wrapper
+                  h5.index-residential__description-title Территория
+                  p.index-residential__description-text 
+                    | Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С.
+                    | в пгт. Яблоновский. За пять минут пешком можно дойти до 
+                    | муниципальной поликлиники, школы и детского садика.
+                  p.index-residential__description-text 
+                    | Этот жилой комплекс располагается в непосредственной 
+                    | близости от улицы Гагарина, где проходит абсолютное 
+                    | большинство маршрутов общественного транспорта, 
+                    | соответственно легко добраться во все части поселка и города 
+                    | Краснодар. Тут же располагается магазин «Магнит», «Магнит 
+                    | Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и 
+                    | другие предприятия сферы услуг.
     .index-leave-request.index__leave-request
       .container.index-leave-request__wrapper
         h2.index-leave-request__title Узнайте о выгодных предложениях и получите личную консультацию

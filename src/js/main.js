@@ -1,7 +1,7 @@
-  import Swiper, { Navigation, Pagination, Grid, Scrollbar } from 'swiper';
+  import Swiper, { Navigation, Pagination, Grid, Scrollbar, Thumbs } from 'swiper';
   
   document.addEventListener('DOMContentLoaded', () => {
-    const swCards = new Swiper('#swiper-index-grid-cards', {
+    const swCards = new Swiper('#index-grid-cards', {
       modules: [Pagination, Grid],
       slidesPerView: "auto",
       spaceBetween: 30,
@@ -29,6 +29,20 @@
       scrollbar: {
         el:'.swiper-scrollbar',
         draggable: true,
+      }
+    })
+
+    const swResidentalThumbs = new Swiper('#index-residential-thumbs', {
+      slidesPerView: "auto",
+      spaceBetween: 40,
+    })
+
+    const swResidentalCards = new Swiper('#index-residential-cards', {
+      modules: [Thumbs],
+      initialSlide: 4,
+      thumbs: {
+        swiper: swResidentalThumbs,
+        slideThumbActiveClass: 'active',
       }
     })
 
