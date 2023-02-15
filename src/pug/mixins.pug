@@ -1,6 +1,6 @@
 mixin svg(name)
 	svg&attributes(attributes)
-		use(xlink:href=`./images/sprites.svg#${name}`)
+		use(xlink:href=`./images/map/sprites.svg#${name}`)
 
 mixin anchors(links)
 	nav.scroll-anchors
@@ -31,7 +31,8 @@ mixin cardType2(card)
 mixin cardType3(card)
 	.card__wrapper
 		.card__wrapper-content
-			.card__inner
+			.card__inner(class=card.active && 'active')
 				.card__inner-content
-					img(src=card.path)
+					.card__img
+						img(src=card.href)
 					span.card__title=card.title

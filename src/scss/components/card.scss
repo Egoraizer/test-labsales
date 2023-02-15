@@ -71,7 +71,8 @@
 	}
 
 	&.card_type-3 {
-
+		height: 102px;
+		
 		.card {
 			&__wrapper {
 				padding: 15px;
@@ -80,21 +81,20 @@
 			&__inner {
 				padding: 13px 20px;
 
+				&.active {
+					.card__img {
+						background-color: $brightCyan;
+					}
+				}
+
 				&-content {
 					display: flex;
 					align-items: center;
-
-					img {
-						width: 46px;
-						height: 46px;
-						border-radius: 100%;
-						overflow: hidden;
-					}
 				}
 			}
 
 			&__title {
-				margin-left: 10px;
+				margin-left: 15px;
 				font-size: 22px;
 				font-weight: 600;
 			}
@@ -140,5 +140,17 @@
 		&:last-child {
 			margin-bottom: 0px;
 		}
+	}
+
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 46px;
+		height: 46px;
+		border-radius: 100%;
+		overflow: hidden;
+		background-color: $white;
+		box-shadow: 0px 3px 15px rgba(33, 45, 85, 0.15);
 	}
 }

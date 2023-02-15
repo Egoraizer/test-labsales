@@ -1,8 +1,7 @@
-  import Swiper, { Navigation, Pagination, Grid } from 'swiper';
+  import Swiper, { Navigation, Pagination, Grid, Scrollbar } from 'swiper';
   
   document.addEventListener('DOMContentLoaded', () => {
-    
-    const sw1 = new Swiper('.swiper', {
+    const swCards = new Swiper('.swiper.index-description', {
       modules: [Pagination, Grid],
       slidesPerView: "auto",
       spaceBetween: 30,
@@ -16,12 +15,25 @@
           )
         }
       },
-
       grid: {
         rows: 2,
       },
     })
 
+    const swMapDescription = new Swiper('.swiper.index-infrastructure__map-description', {
+      modules: [Scrollbar],
+      slidesPerView: "auto",
+      direction: 'vertical',
+      spaceBetween: 15,
+      cssMode: true,
+      scrollbar: {
+        el:'.swiper-scrollbar',
+        draggable: true,
+      }
+    })
+
+    ymaps.ready(init);
+    
     function init() {
       const placemarks = [
         { coords: [44.996224, 38.924706], imageHref: './images/map/pool-purple.svg' },
@@ -35,34 +47,32 @@
         { coords: [44.988276, 38.924818], imageHref: './images/map/petrol-purple.svg' },
         { coords: [44.988337, 38.932676], imageHref: './images/map/coffee-orange.svg' },
         { coords: [44.985890, 38.927059], imageHref: './images/map/hospital-white.svg' },
-      ]
-        var infrastructureMap = new ymaps.Map("infrastructure-map", {
-            center: [44.992370, 38.937148],
-            zoom: 15,
-            controls: []
-        }, {
-          suppressMapOpenBlock: true,
-        })
+      ];
 
-        placemarks.forEach((mark) => {
-          infrastructureMap.geoObjects.add(new ymaps.Placemark(mark.coords, {}, {
-            iconLayout: 'default#image',
-            iconImageSize: [70, 70],
-            iconImageHref: mark.imageHref,
-            iconImageOffset: [-30, -30]
-          }))
-        })
+      const center = [44.992547, 38.930138];
 
-        infrastructureMap.geoObjects.add(new ymaps.Placemark([44.992056, 38.925886], {}, {
+      var infrastructureMap = new ymaps.Map("infrastructure-map", {
+          center: center,
+          zoom: 15,
+          controls: []
+      }, {
+        suppressMapOpenBlock: true,
+      })
+
+      placemarks.forEach((mark) => {
+        infrastructureMap.geoObjects.add(new ymaps.Placemark(mark.coords, {}, {
           iconLayout: 'default#image',
-          iconImageSize: [324, 54],
-          iconImageHref: './images/map/our-office.svg',
-          iconImageOffset: [-125, -20]
+          iconImageSize: [70, 70],
+          iconImageHref: mark.imageHref,
+          iconImageOffset: [-30, -30]
         }))
+      })
+
+      infrastructureMap.geoObjects.add(new ymaps.Placemark([44.992056, 38.925886], {}, {
+        iconLayout: 'default#image',
+        iconImageSize: [324, 54],
+        iconImageHref: './images/map/our-office.svg',
+        iconImageOffset: [-125, -20]
+      }))
     }
-
-
-
-
-    ymaps.ready(init);
   })

@@ -18,7 +18,11 @@
   ]
   
   var cardsType3 = [
-    {'title': 'Магазины', path: './images/map/circle-shop-white.svg'}, 
+    {'title': 'Магазины', href: './images/map/icon-shop-basket.svg', active: false}, 
+    {'title': 'ЖК "Яблоновский"', href: './images/map/icon-pin.svg', active: true}, 
+    {'title': 'Детский сад', href: './images/map/icon-kiddengarden.svg', active: false}, 
+    {'title': 'АЗС', href: './images/map/icon-gas-station.svg', active: false}, 
+    {'title': 'Поликлинника', href: './images/map/icon-pharmacy.svg', active: false}, 
   ]
 .index
   .index__wrapper
@@ -42,9 +46,12 @@
       h2.index-infrastructure__title Наша Инфраструктура
       .index-infrastructure__map
         #infrastructure-map(style="width: 100%; height: 100%;")
-        .index-infrastructure__map-description
-          ul.index-infrastructure__cards
+        .swiper.index-infrastructure__map-description
+          ul.swiper-wrapper.index-infrastructure__cards
             each card in cardsType3
-              li.card.card_type-3.index-infrastructure__card
+              li.swiper-slide.card.card_type-3.index-infrastructure__card
                 +cardType3(card)
-        
+              li.swiper-slide.card.card_type-3.index-infrastructure__card
+                +cardType3(card)
+          .swiper-scrollbar
+                
