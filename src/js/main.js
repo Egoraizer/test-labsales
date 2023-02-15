@@ -1,7 +1,7 @@
   import Swiper, { Navigation, Pagination, Grid, Scrollbar } from 'swiper';
   
   document.addEventListener('DOMContentLoaded', () => {
-    const swCards = new Swiper('.swiper.index-description', {
+    const swCards = new Swiper('#swiper-index-grid-cards', {
       modules: [Pagination, Grid],
       slidesPerView: "auto",
       spaceBetween: 30,

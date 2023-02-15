@@ -100,7 +100,7 @@
 
   &-description {
 
-    &.container {
+    &__wrapper {
       max-width: 1200px;
       padding: 15px 30px;
     }
@@ -142,6 +142,30 @@
           transform: translateX(50%);
           padding: 0 15px;
         }
+      }
+    }
+  }
+
+  &-residential-description {
+    &__subtitle {
+      font-size: vw(22, 18);
+      line-height: vw(26, 21);
+      text-align: center;
+	    color: $darkBlueSecondary;
+    }
+
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__card {
+      max-width: 193px;
+      width: 100%;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0px;
       }
     }
   }

@@ -101,6 +101,28 @@
 		}
 	}
 
+	&.card_type-4 {
+		.card {
+			&__inner {
+				padding: 23px 0 23px 20px;
+				font-size: 22px;
+				line-height: 26px;
+				font-weight: 600;
+				
+				&.active {
+					color: $brightCyan;
+					border: 1px solid $brightCyan;
+
+					&::before {
+						border-right: 1px solid $brightCyan;
+						left: -10px;
+						height: 18px;
+					}
+				}
+			}
+		}
+	}
+
 	&__wrapper {
 		background-color: $lightGrayishCyan;
 		border-radius: 10px;

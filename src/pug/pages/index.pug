@@ -24,9 +24,18 @@
     {'title': 'АЗС', href: './images/map/icon-gas-station.svg', active: false}, 
     {'title': 'Поликлинника', href: './images/map/icon-pharmacy.svg', active: false}, 
   ]
+
+  var cardsType4 = [
+    {'title': 'Парковка', active: false}, 
+    {'title': 'Архитектура', active: false}, 
+    {'title': 'Охрана', active: false}, 
+    {'title': 'Территория', active: true}, 
+  ]
+  
 .index
   .index__wrapper
-    .container.index-info.index__info
+    .index-info.index__info
+      .container.index-info__wrapper
         h1.index-info__title Жилой комплекс 
           span.--text-important «Яблоновский»
         h4.index-info__subtitle Краснодар, пгт. Яблоновский ул. Кобцевой
@@ -36,14 +45,15 @@
           each card in cardsType1
             li.card.card_type-1.index-info__card
               +cardType1(card)
-    .container.swiper.index-description.index__description
+    .index-description.index__description
+      .container.swiper.index-description__wrapper#swiper-index-grid-cards
         ul.swiper-wrapper.index-description__cards
             each card in cardsType2
                 li.swiper-slide.card.card_type-2.index-description__card
                   +cardType2(card)
         .swiper-pagination
     .index-infrastructure.index__infrastructure
-      h2.index-infrastructure__title Наша Инфраструктура
+      h2.container.index-infrastructure__title Наша инфраструктура
       .index-infrastructure__map
         #infrastructure-map(style="width: 100%; height: 100%;")
         .swiper.index-infrastructure__map-description
@@ -54,4 +64,26 @@
               li.swiper-slide.card.card_type-3.index-infrastructure__card
                 +cardType3(card)
           .swiper-scrollbar
-                
+    .index-residential-description.index__residential-description
+      h2.index-residential-description__title Описание Жилого Комплекса
+      .index-residential-description__subtitle
+        span Нажимайте
+        svg(width='30' height='12' viewbox='0 0 23 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M0.657228 5.59267L5.74505 0.518923C5.91175 0.352785 6.18163 0.353064 6.34805 0.519782C6.51434 0.686479 6.51391 0.956515 6.34719 1.12278L1.56221 5.89455L6.34736 10.6663C6.51406 10.8326 6.51449 11.1024 6.34822 11.2692C6.2648 11.3527 6.15551 11.3945 6.04622 11.3945C5.93721 11.3945 5.82835 11.353 5.74507 11.27L0.657228 6.1964C0.576941 6.11653 0.531888 6.00782 0.531888 5.89455C0.531888 5.78128 0.57707 5.6727 0.657228 5.59267Z' fill='#656D89')
+          path(d='M22.3428 6.19639L17.2549 11.2701C17.0883 11.4363 16.8184 11.436 16.6519 11.2693C16.4857 11.1026 16.4861 10.8325 16.6528 10.6663L21.4378 5.89451L16.6526 1.12277C16.4859 0.956478 16.4855 0.686614 16.6518 0.519896C16.7352 0.436322 16.8445 0.394534 16.9538 0.394534C17.0628 0.394534 17.1717 0.436042 17.2549 0.519036L22.3428 5.59266C22.4231 5.67254 22.4681 5.78125 22.4681 5.89451C22.4681 6.00778 22.4229 6.11636 22.3428 6.19639Z' fill='#656D89')
+        span чтобы подробно ознакомится с проектом
+      ul.container.index-residential-description__cards
+        each card in cardsType4
+          li.card.card_type-4.index-residential-description__card
+              +cardType4(card)
+    .index-leave-request.index__leave-request
+      .container.index-leave-request__wrapper
+        h2.index-leave-request__title Узнайте о выгодных предложениях и получите личную консультацию
+        .index-leave-request__block
+          .index-leave-request__info
+            span.--mobile.index-leave-request__status Сейчас мы работаем
+            span.index-leave-request__phone-title По любым возникающим Вами вопросов звоните нам напрямую
+            a.index-leave-request__phone(href='tel:+79183774810')
+              img(src="./images/leave-request/telephone.svg")
+              span +7 (918) 377-48-10
+          form.index-leave-request__form
