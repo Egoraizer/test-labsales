@@ -7,11 +7,13 @@
       spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
+        bulletClass: 'index-advantages__bullet',
+        bulletActiveClass: 'index-advantages__bullet_active',
         type: 'bullets',
         clickable: true,
         renderBullet: function(index, className) {
           return (
-            '<div class="' + className + '">' + '</div>'
+            '<span class="' + className + '">' + '<span class="circle"></span>' +  '</span>'
           )
         }
       },
@@ -34,7 +36,14 @@
 
     const swResidentalThumbs = new Swiper('#index-residential-thumbs', {
       slidesPerView: "auto",
-      spaceBetween: 40,
+      spaceBetween: 15,
+      direction: 'vertical',
+      breakpoints: {
+        1140: {
+          direction: 'horizontal',
+          spaceBetween: 40,
+        }
+      }
     })
 
     const swResidentalCards = new Swiper('#index-residential-cards', {

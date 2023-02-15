@@ -43,10 +43,10 @@
         h4.index-info__subtitle Краснодар, пгт. Яблоновский ул. Кобцевой
         h5.index-info__price.--text-important от 63 801 до 65 678 ₽/м²
         a.btn.index-info__button-get-price#buttonGetPrice(href="#") Узнать стоимость проекта
-        ul.index-info__cards
-          each card in cardsType1
-            li.card.card_type-1.index-info__card
-              +cardType1(card)
+      ul.index-info__cards
+        each card in cardsType1
+          li.card.card_type-1.index-info__card
+            +cardType1(card)
     .index-advantages.index__advantages
       .container.index-advantages__wrapper
         h2.index-advantages__title О комплексе
@@ -79,7 +79,7 @@
             each card in cardsType4
               li.swiper-slide.card.card_type-4.index-residential__thumb
                   +cardType4(card)
-        .container.swiper#index-residential-cards
+        .container.swiper.index-residential__cards-container#index-residential-cards
           ul.swiper-wrapper.index-residential__cards
             li.swiper-slide.index-residential__card
               p Парковка
@@ -90,33 +90,33 @@
             li.swiper-slide.index-residential__card
               .index-residential__image
                 img(src="./images/residental/image-description-desc-big-1.png")
+                .index-residential__description
+                  .index-residential__description-wrapper
+                    h5.index-residential__description-title Территория
+                    p.index-residential__description-text 
+                      | Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С.
+                      | в пгт. Яблоновский. За пять минут пешком можно дойти до 
+                      | муниципальной поликлиники, школы и детского садика.
+                    p.index-residential__description-text 
+                      | Этот жилой комплекс располагается в непосредственной 
+                      | близости от улицы Гагарина, где проходит абсолютное 
+                      | большинство маршрутов общественного транспорта, 
+                      | соответственно легко добраться во все части поселка и города 
+                      | Краснодар. Тут же располагается магазин «Магнит», «Магнит 
+                      | Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и 
+                      | другие предприятия сферы услуг.
               .index-residential__image
                 img(src="./images/residental/image-description-desc-small-1.png")
               .index-residential__image
                 img(src="./images/residental/image-description-desc-small-2.png")
               .index-residential__image
                 img(src="./images/residental/image-description-desc-small-3.png")
-              .index-residential__description
-                .index-residential__description-wrapper
-                  h5.index-residential__description-title Территория
-                  p.index-residential__description-text 
-                    | Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С.
-                    | в пгт. Яблоновский. За пять минут пешком можно дойти до 
-                    | муниципальной поликлиники, школы и детского садика.
-                  p.index-residential__description-text 
-                    | Этот жилой комплекс располагается в непосредственной 
-                    | близости от улицы Гагарина, где проходит абсолютное 
-                    | большинство маршрутов общественного транспорта, 
-                    | соответственно легко добраться во все части поселка и города 
-                    | Краснодар. Тут же располагается магазин «Магнит», «Магнит 
-                    | Косметик», МФЦ, овощной рынок, мебельные магазины, аптеки и 
-                    | другие предприятия сферы услуг.
     .index-leave-request.index__leave-request
       .container.index-leave-request__wrapper
         h2.index-leave-request__title Узнайте о выгодных предложениях и получите личную консультацию
         .index-leave-request__blocks
           .index-leave-request__block
-            span.--mobile.active.index-leave-request__status Сейчас мы работаем
+            span.active.index-leave-request__status Сейчас мы работаем
             span.index-leave-request__subtitle По любым возникающим Вами вопросов звоните нам напрямую
             a.index-leave-request__phone(href='tel:+79183774810')
               .index-leave-request__phone-icon
@@ -125,15 +125,15 @@
           .index-leave-request__block
             span.index-leave-request__text_fill-number Или заполните форму форму
           .index-leave-request__block
-            span.--desktop.active.index-leave-request__status Сейчас мы работаем
+            span.active.index-leave-request__status Сейчас мы работаем
             form.index-leave-request__form
               .index-leave-request__form-wrapper
                 +cardType5()
-                  input(type="text" placeholder="Ваше имя")
+                  input(type="text" placeholder="Ваше имя" name="fname" required)
                 +cardType5()
-                  input(type="text" placeholder="Ваше имя")
+                  input(type="text" placeholder="Ваш телефон" name="phone" required)
                 +cardType5()
-                  input(type="text" placeholder="Ваше имя")
+                  input(type="email" placeholder="Ваше имя" name="email" required)
                 button.btn.index-info__button-get-price#formSubmit(type="submit") Отправить заявку
             .index-leave-request__agree-privacy-policy
               input(type="checkbox" id="input-agree-policy")

@@ -11,24 +11,36 @@
 
 header.header
   .container.header__container
-    .header-desktop.--desktop
-      .header-desktop__content
-        .header-desktop__logo
-          a(href="/")
-            img(src="./images/other/logo-desc-big.svg", alt="Логотип сайта")
-        nav.header-desktop__links
-          ul
-            li
-              a.header-desktop__link.--active(href="#") Жилые комплексы
-            li
-              a.header-desktop__link(href="#") О компании
-            li
-              a.header-desktop__link(href="#") Как купить
-            li
-              a.header-desktop__link(href="#") Контакты
-        .header-desktop__contacts 
-          a.header-desktop__phone(href='tel:+79183774810') +7 (918) 377-48-10
-          a.header-desktop__request-call(href='#' id='requestCall') Заказать звонок
-    .header-mobile.--mobile
-    .--desktop
+    .header__wrapper
+      .header-desktop
+        .header-desktop__wrapper
+          .header-desktop__content
+            .header-desktop__logo
+              a(href="/")
+                img(src="./images/other/logo-desc-big.svg", alt="Логотип сайта")
+            nav.header-desktop__links
+              ul
+                li
+                  a.header-desktop__link.--active(href="#") Жилые комплексы
+                li
+                  a.header-desktop__link(href="#") О компании
+                li
+                  a.header-desktop__link(href="#") Как купить
+                li
+                  a.header-desktop__link(href="#") Контакты
+            .header-desktop__contacts 
+              a.header-desktop__phone(href='tel:+79183774810') +7 (918) 377-48-10
+              a.header-desktop__request-call(href='#' id='requestCall') Заказать звонок
+      .header-mobile
+        .header-mobile__wrapper
+          .header-mobile__content
+            .header-mobile__logo
+              img(src="./images/other/logo-mobile-blue.svg")
+            .header-mobile__menu#menu
+              span Меню
+              img(src="./images/other/menu-mobile.svg")
       +anchors(anchors)
+      ul.breadcrumbs
+        li.breadcrumbs__link Главная
+        li.breadcrumbs__link Жилые комплексы
+        li.breadcrumbs__link Яблоновский

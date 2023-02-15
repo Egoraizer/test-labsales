@@ -1,9 +1,40 @@
 .header {
+  .breadcrumbs {
+    display: none;
+    text-align: center;
+    
+
+    &__link {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      color: $darkBlueSecondary;
+
+      &:not(:first-child) {
+        &:before {
+          content: "/";
+          padding: 0 5px;
+        }
+      }
+
+      &:last-child {
+        font-weight: 600;
+      }
+    }
+  }
+
   &__container {
     padding: 12px 0;
   }
+  
+  &__wrapper {
+    padding: 0 15px;
+  }
 
   &-desktop {
+    display: block;
+
     &__content {
       display: flex;
       justify-content: space-between;
@@ -41,6 +72,41 @@
     &__request-call {
       @include font('Gilroy', 18px, 22px, 600);
       text-decoration: underline;
+    }
+  }
+
+  &-mobile {
+    display: none;
+    margin-bottom: 30px;
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__menu {
+      span {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  @include mediaMaxW(1140) {
+    .scroll-anchors {
+      display: none;
+    }
+
+    .breadcrumbs {
+      display: block;
+    }
+
+    &-desktop {
+      display: none;
+    }
+
+    &-mobile {
+      display: block;
     }
   }
 }
